@@ -9,7 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["Cronus.API/Cronus.API.csproj", "Cronus.API/"]
 RUN dotnet restore "Cronus.API/Cronus.API.csproj"
-COPY Cronus.API .
+COPY . .
 WORKDIR "/src/Cronus.API"
 RUN dotnet build "Cronus.API.csproj" -c Release -o /app/build
 
